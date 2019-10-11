@@ -1,0 +1,4 @@
+*.out
+*.luac*
+contract-tools
+*.o
