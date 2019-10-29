@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
   if (argc != 2)
   {
     cout << "Usage:\
-      contract-tools filename" << endl;
+      \t zipluac filename" << endl;
     return -1;
   }
 
