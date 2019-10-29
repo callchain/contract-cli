@@ -1,6 +1,6 @@
-contract-tools:
-	g++ -llz4 main.cpp -o contract-tools
+zipluac:
+	g++ -llz4 zipluac.cpp -o zipluac
 
 .PHONY: clean
 clean:
-	rm contract-tools
+	rm zipluac

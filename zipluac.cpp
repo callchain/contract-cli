@@ -38,7 +38,7 @@ string bytes2hex(char* bytes, int length)
    return str;  
 }
 
-int main(int argc,char *argv[])
+int main(int argc, char *argv[])
 {
   if (argc != 2)
   {
@@ -47,27 +47,27 @@ int main(int argc,char *argv[])
     return -1;
   }
 
-	string filename = argv[1];
-	fstream input(filename, input.binary | input.in);
+  string filename = argv[1];
+  fstream input(filename, input.binary | input.in);
   if (!input.is_open())
   {
     cout << "File not exists" << endl;
     return -1;
   }
 
-	input.seekg(0, input.end);
-	int size = input.tellg();
-	input.seekg(0, input.beg);
+  input.seekg(0, input.end);
+  int size = input.tellg();
+  input.seekg(0, input.beg);
 
-	char* buf = new char[size];
-	input.read(buf, size);
-	input.close();
+  char* buf = new char[size];
+  input.read(buf, size);
+  input.close();
 
 	int max_size = LZ4_compressBound(size);
 	char *output_buf = new char[max_size];
 	int actual_size = LZ4_compress_default(buf, output_buf, size, max_size);
 
-	string result = bytes2hex(output_buf, actual_size);
+  string result = bytes2hex(output_buf, actual_size);
   string output_filename = filename + ".hex";
   fstream output(output_filename, output.out);
   output.write(result.c_str(), result.size());

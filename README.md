@@ -1,5 +1,7 @@
 # Lua Contract Tools
 
+## zipluac command
+
 `sh
 *.luac -> *.luac.lz4 -> *.luac.lz4.hex
 `
