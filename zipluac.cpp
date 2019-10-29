@@ -63,9 +63,9 @@ int main(int argc, char *argv[])
   input.read(buf, size);
   input.close();
 
-	int max_size = LZ4_compressBound(size);
-	char *output_buf = new char[max_size];
-	int actual_size = LZ4_compress_default(buf, output_buf, size, max_size);
+  int max_size = LZ4_compressBound(size);
+  char *output_buf = new char[max_size];
+  int actual_size = LZ4_compress_default(buf, output_buf, size, max_size);
 
   string result = bytes2hex(output_buf, actual_size);
   string output_filename = filename + ".hex";
