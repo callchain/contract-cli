@@ -1,4 +1,4 @@
-# Lua Contract Tools
+# Contract Tools
 
 ## zipluac command
 
