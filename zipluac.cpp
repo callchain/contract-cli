@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
     }
 
     string filename = argv[1];
-    fstream input(filename, input.binary | input.in);
+    fstream input(filename.c_str(), input.binary | input.in);
     if (!input.is_open())
     {
         cout << "File not exists" << endl;
@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 
     string result = compress(buf);
     string output_filename = filename + ".hex";
-    fstream output(output_filename, output.out);
+    fstream output(output_filename.c_str(), output.out);
     output.write(result.c_str(), result.size());
     output.flush();
     output.close();
