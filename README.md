@@ -3,12 +3,12 @@
 ## zipluac command
 
 `sh
-*.luac -> *.luac.lz4 -> *.luac.lz4.hex
+*.luac -> *.luac.snappy -> *.luac.snappy.hex
 `
 
-read luac bytecode, compress it use lz4, and output hex file \*.hex
+read luac bytecode, compress it use snappy, and output hex file \*.hex
 
 ## Dependency
 
-lz4 - (https://github.com/lz4/lz4)
+snappy - (https://github.com/google/snappy)
 
