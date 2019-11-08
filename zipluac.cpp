@@ -2,7 +2,7 @@
 #include <sstream>
 #include <fstream>
 #include <vector>
-#include "lz4.h"
+#include <snappy.h>
 
 using namespace std;
 
@@ -16,8 +16,8 @@ int hexchar2int(char c)
 
 std::vector<char> hex2bytes(string s)
 {
-    std::vector<char> v;
     int sz = s.length();
+    std::vector<char> v(sz/2);
     for (int i = 0 ; i < sz ; i += 2) {
         char c = (char) ((hexchar2int(s.at(i)) << 4) | hexchar2int(s.at(i+1)));
         v.push_back(c);
@@ -25,11 +25,11 @@ std::vector<char> hex2bytes(string s)
     return v;
 }
 
-string bytes2hex(char* bytes, int length)
+string bytes2hex(string bytes)
 {
     string str("");
     string hex("0123456789abcdef");
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < bytes.size(); i++)
     {
         int b;
         b = 0x0f & (bytes[i] >> 4);
@@ -42,23 +42,20 @@ string bytes2hex(char* bytes, int length)
 
 string compress(std::vector<char> input)
 {
-    int max_size = LZ4_compressBound(input.size());
-    char *output_buf = new char[max_size];
-    int actual_size = LZ4_compress_default(&input[0], output_buf, input.size(), max_size);
-    string result = bytes2hex(output_buf, actual_size);
+    string input_str = std::string(input.begin(), input.end());
+    string output;
+    snappy::Compress(input_str.data(), input_str.size(), &output);
+    string result = bytes2hex(output);
     return result;
 }
 
-std::vector<char> uncompress(string input)
+string uncompress(string input)
 {
     std::vector<char> bytes = hex2bytes(input);
-    int size = bytes.size();
-    int max_size = size*2 + 8;
-    char *output_buf = new char[max_size];
-    int actual_size = LZ4_decompress_safe(&bytes[0], output_buf, size, max_size);
-    std::vector<char> v(actual_size);
-    std::copy(output_buf, output_buf + actual_size, v.begin());
-    return v;
+    string byte_str = std::string(bytes.begin(), bytes.end());
+    string output;
+    snappy::Uncompress(byte_str.data(), byte_str.size(), &output);
+    return output;
 }
 
 int main(int argc, char *argv[])
