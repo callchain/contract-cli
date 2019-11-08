@@ -3,3 +3,4 @@
 zipluac
 *.o
 .vscode
+*.hex
