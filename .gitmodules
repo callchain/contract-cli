@@ -1,0 +1,3 @@
+[submodule "lua-vm"]
+	path = lua-vm
+	url = https://github.com/callchain/lua-vm

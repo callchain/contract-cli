@@ -4,3 +4,7 @@ zipluac
 *.o
 .vscode
 *.hex
+src/zipluac
+tools/zipluac
+tools/luac
+tools/luac.*

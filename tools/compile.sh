@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ $# -ne 1 ]; then
-  echo "You should input 1 parameter"
+  echo "You should input one lua file"
 else
   if [ -f $1 ]; then
     rm -f lua.out*
