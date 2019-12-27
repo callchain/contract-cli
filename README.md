@@ -11,56 +11,53 @@ readline
 
 In Centos system
 
-`
+```bash
 yum install snappy
-
 yum install libreadline-dev
-`
+```
 
 In Ubuntu system
 
-`
+```bash
 apt install libsnappy-dev
-
 apt install libreadline-dev
-`
+```
 
 In MacOS system
 
-`
+```bash
 brew install libsnappy-dev
-
 brew install libreadline-dev
-`
+```
 
 ## Build
 
 1. Pull lua virtual machine code
 
-`
+```
 git submodule update --init --recursive
-`
+```
 
 2. Build luac and zipluac command, collect these commands to tools directory. Then tools directory is build output
 
-`
+```
 ./build.sh
-`
+```
 
 ## Usage
 
 In tools directory
 
-`
+```
 ./compile.sh [your contract lua file name]
-`
+```
 
 The luac.out.hex file is output file.
 
 Compile example
 
-`
+```
 ./compile.sh ../examples/hello.lua
-`
+```
 
 
