@@ -1,4 +1,4 @@
-# Contract Tools
+# Lua Contract Tools
 
 User use this tool to compile lua contract to lua bytecode and compress bytecode by snappy. The compress lua bytecode is convenient for network transmission and blockchain storage. This tool only support Linux system and MacOS system now.
 
