@@ -14,7 +14,6 @@ In Centos system
 `
 yum install snappy
 yum install libreadline-dev
-
 `
 
 In Ubuntu system
