@@ -13,6 +13,7 @@ In Centos system
 
 `
 yum install snappy
+
 yum install libreadline-dev
 `
 
@@ -20,6 +21,7 @@ In Ubuntu system
 
 `
 apt install libsnappy-dev
+
 apt install libreadline-dev
 `
 
@@ -27,6 +29,7 @@ In MacOS system
 
 `
 brew install libsnappy-dev
+
 brew install libreadline-dev
 `
 
