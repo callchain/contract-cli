@@ -40,9 +40,16 @@ git submodule update --init --recursive
 
 In tools directory
 
-sh
 `
 ./compile.sh [your contract lua file name]
 `
 
-The out.hex file is output file.
+The luac.out.hex file is output file.
+
+Compile example
+
+`sh
+./compile.sh ../examples/hello.lua
+`
+
+

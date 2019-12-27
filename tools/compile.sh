@@ -6,6 +6,7 @@ else
     rm -f lua.out*
     ./luac $1
     ./zipluac luac.out
+    rm luac.out
   else
     echo "File" $1 "no exists"
   fi
