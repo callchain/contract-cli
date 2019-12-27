@@ -11,10 +11,12 @@ In Centos system
 `sh
 yum install snappy
 `
+
 In Ubuntu system
 `sh
 apt install libsnappy-dev
 `
+
 In MacOS system
 `sh
 brew instlal libsnappy-dev
