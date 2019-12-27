@@ -8,17 +8,17 @@ User use this tool to compile lua contract to lua bytecode and compress bytecode
 snappy - (https://github.com/google/snappy)
 
 In Centos system
-`sh
+`
 yum install snappy
 `
 
 In Ubuntu system
-`sh
+`
 apt install libsnappy-dev
 `
 
 In MacOS system
-`sh
+`
 brew instlal libsnappy-dev
 `
 
@@ -26,13 +26,13 @@ brew instlal libsnappy-dev
 
 1. Pull lua virtual machine code
 
-`sh
+`
 git submodule update --init --recursive
 `
 
 2. Build luac and zipluac command, collect these commands to tools directory. Then tools directory is build output
 
-`sh
+`
 ./build.sh
 `
 
@@ -48,7 +48,7 @@ The luac.out.hex file is output file.
 
 Compile example
 
-`sh
+`
 ./compile.sh ../examples/hello.lua
 `
 
