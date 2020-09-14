@@ -1,5 +1,6 @@
 *.out
 *.luac*
+luac
 zipluac
 *.o
 .vscode
