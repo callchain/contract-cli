@@ -1,7 +1,3 @@
-function check(args)
-  return 0
-end
-
 function main(args)
   contract["hello"]="world"
   return 0

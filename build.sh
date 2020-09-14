@@ -14,5 +14,5 @@ else
     exit
 fi
 
-cp lua-vm/src/luac tools/
-cp src/zipluac tools/
+cp lua-vm/src/luac ./
+cp src/zipluac ./

@@ -1,12 +1,17 @@
 # Lua Contract Tools
 
-User use this tool to compile lua contract to lua bytecode and compress bytecode by snappy. The compress lua bytecode is convenient for network transmission and blockchain storage. This tool only support Linux system and MacOS system now.
+## Overview
+
+User use this contract tool to convert lua source contract file to lua bytecode which is compressed by snappy. Compressed bytecode is convenient fo network transmission and system storage.
+
+Now this tool only support Linux system and MacOS system.
+
 
 ## Dependency
 
-snappy - (https://github.com/google/snappy)
+1. snappy - (https://github.com/google/snappy)
 
-readline
+2. readline
 
 
 In Centos system
@@ -49,7 +54,7 @@ git submodule update --init --recursive
 In tools directory
 
 ```
-./compile.sh [your contract lua file name]
+./bytecode.sh [your contract lua file name]
 ```
 
 The luac.out.hex file is output file.
@@ -57,7 +62,10 @@ The luac.out.hex file is output file.
 Compile example
 
 ```
-./compile.sh ../examples/hello.lua
+./bytecode.sh ../examples/hello.lua
 ```
 
+## LICENSE
+
+See LICENSE file in this project.
 
